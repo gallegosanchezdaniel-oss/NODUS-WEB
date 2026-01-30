@@ -1,0 +1,8 @@
+{
+  "name": "NODUS - Soluciones Digitales",
+  "description": "Landing page profesional para NODUS, consultora de digitalización para pymes y negocios locales, con estética sobria y elegante.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
