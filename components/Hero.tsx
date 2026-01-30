@@ -65,7 +65,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
         .hero__bg{
           position: absolute;
           inset: 0;
-          background-image: url("/hero2.jpg");
+          background-image: url("/hero.jpg");
           background-size: cover;
           background-position: center;
           transform: scale(1.02);
