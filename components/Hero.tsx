@@ -1,31 +1,35 @@
-export default function Hero() {
+type HeroProps = {
+  onCtaClick?: () => void;
+};
+
+export default function Hero({ onCtaClick }: HeroProps) {
   return (
     <section className="hero">
-      {/* Background image */}
+      {/* Fondo (imagen limpia) */}
       <div className="hero__bg" />
 
-      {/* Subtle overlay for legibility */}
+      {/* Capa para legibilidad */}
       <div className="hero__overlay" aria-hidden="true" />
 
-      {/* Lines (SVG overlay) */}
+      {/* Líneas (overlay SVG) */}
       <svg
         className="hero__lines"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        {/* Two vertical lines (no horizontal) */}
+        {/* Líneas verticales finas */}
         <line x1="44" y1="6" x2="44" y2="94" />
         <line x1="72" y1="10" x2="72" y2="90" />
 
-        {/* Small underline under claim */}
+        {/* Subrayado corto bajo el claim */}
         <line x1="72" y1="58" x2="82" y2="58" />
 
-        {/* Corner bracket bottom-right */}
+        {/* Esquina inferior derecha tipo L */}
         <path d="M95 95 L95 88 M95 95 L88 95" />
       </svg>
 
-      {/* Content */}
+      {/* Contenido */}
       <div className="hero__content">
         <div className="hero__left">
           <h1 className="hero__brand">NODUS</h1>
@@ -37,15 +41,18 @@ export default function Hero() {
             <br />
             para negocios reales
           </p>
+
+          {/* (Opcional) Si quieres un botón que use tu onCtaClick */}
+          {/* <button className="hero__btn" onClick={onCtaClick}>
+            Solicitar presupuesto
+          </button> */}
         </div>
       </div>
 
-      {/* Scroll hint */}
       <div className="hero__scroll" aria-hidden="true">
         Scroll ↓
       </div>
 
-      {/* Styles inside component so you don't need extra CSS files */}
       <style>{`
         .hero{
           position: relative;
@@ -106,7 +113,6 @@ export default function Hero() {
         .hero__brand{
           margin: 0;
           font-size: clamp(56px, 7vw, 120px);
-          letter-spacing: 0.02em;
           color: #fff;
           line-height: 1;
         }
@@ -130,11 +136,9 @@ export default function Hero() {
           color: rgba(255,255,255,0.55);
         }
 
-        /* Mobile: stack */
         @media (max-width: 768px){
           .hero__content{
             grid-template-columns: 1fr;
-            text-align: left;
             padding-top: 90px;
             padding-bottom: 90px;
           }
